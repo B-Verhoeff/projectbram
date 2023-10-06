@@ -1,0 +1,34 @@
+body {
+    background-image: url('img/artistic-blurry-colorful-wallpaper-background.jpg');
+    padding: 5%; /* Zegt hoe hoog/laag het content begint */
+    overflow: hidden; /* Verwijdert de scrollbar */
+    background-size: cover;
+}
+
+.centertext {
+    text-align: center;
+    padding: 10px;
+    color: rgb(249, 255, 66);
+}
+
+input {
+    background-color: rgb(249, 255, 66);
+    width: 80px;
+    height: 30px;
+}
+
+article {
+    width: 90px;
+    height: 30px;
+    background-color: rgb(249, 255, 66);
+    margin: 100px;
+    border-style: double;
+    text-align: center;
+    padding-bottom: 20px;
+    position: relative;
+    left: 300px;
+}
+
+footer{
+    color: rgb(249, 255, 66);
+}
