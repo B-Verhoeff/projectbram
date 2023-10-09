@@ -1,39 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<div class="element"></div>
 <head>
-    <script src="js/main.js"></script>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hoger Lager Spel</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-
 <body>
-    <div class="centertext">
-        <h1>Hoger Lager</h1>
-        <h2>Is mijn getal hoger of lager dan 5 </h2>
-        <p>Tussen 1-10</p>
-        <h3 id="emptyspace"><br></h3> <!-- Dit is een lege witregel dat wordt herplaats als textField wordt geupdate -->
-        <h3 id="textField"></h3> <!-- Laat zien of je gewonnen hebt of niet -->
-
-        <input type="button" value="Hoger" onclick="higher()">
-
-        <input type="button" value="Lager" onclick="lower()">
+    <div class="container">
+        <h1>Hoger Lager Spel</h1>
+        <div class="centered-content">
+            <img id="dice" src="images/dice-1.png" alt="Dobbelsteen">
+            <div id="buttons">
+                <button id="higher">Hoger</button>
+                <button id="lower">Lager</button>
+            </div>
+            <div id="score">Score: 0</div>
+        </div>
     </div>
-
-    <div class="centertext">
-        <input type="button" value="Reset" onclick="reset()"> <!-- Herlaad de hele pagina (Dus F5) -->
-    </div>
-
-    <article>
-        <p>Getal is = <a id="N1"></a></p> <!-- Laat het getal zien als je hebt gegokt -->
-    </article>
-
+    <script src="script.js"></script>
 </body>
-<footer>
-    &copy Bram en Dean
-</footer>
 </html>
