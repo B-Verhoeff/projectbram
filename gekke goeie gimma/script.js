@@ -34,10 +34,10 @@ function startGame() {
 
 rollDiceButton.addEventListener("click", () => {
     playerRoll = rollDice();
-    computerRoll = rollDice();
-
     playerDice.src = `images/dobbelsteen-${playerRoll}.png`;
-    computerDice.src = `images/dobbelsteen-${computerRoll}.png`;
+
+    // Roep hier de functie aan om de worp van de computer weer te geven
+    showComputerRoll();
 
     rollDiceButton.disabled = true;
     rollDiceButton.classList.add("disabled");
@@ -52,21 +52,32 @@ function rollDice() {
 }
 
 higherButton.addEventListener("click", () => {
+    // Roep hier de functie aan om de worp van de computer weer te geven
+    showComputerRoll();
+
     compareRolls("higher");
 });
 
 lowerButton.addEventListener("click", () => {
+    // Roep hier de functie aan om de worp van de computer weer te geven
+    showComputerRoll();
+
     compareRolls("lower");
 });
 
+function showComputerRoll() {
+    computerRoll = rollDice();
+    computerDice.src = `images/dobbelsteen-${computerRoll}.png`;
+}
+
 function compareRolls(choice) {
-    const isHigher = playerRoll > computerRoll;
-    const isLower = playerRoll < computerRoll;
+    const playerSum = playerRoll;
+    const computerSum = computerRoll;
 
     const betAmount = parseInt(betInput.value);
 
     if (betAmount <= playerCredits) {
-        if ((choice === "higher" && isHigher) || (choice === "lower" && isLower)) {
+        if ((choice === "higher" && playerSum > computerSum) || (choice === "lower" && playerSum < computerSum)) {
             playerCredits += betAmount;
             computerCredits -= betAmount;
             resultMessage.textContent = `Je hebt gewonnen ${betAmount} credits!`;
